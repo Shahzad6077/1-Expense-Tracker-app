@@ -36,7 +36,7 @@ jobs:
         run: npm install --unsafe-perm -g node-sass@4.14.1
 
       - name: Build React App
-        run: yarn build
+        run: npm run build
 
       # Install Surge
       - name: Install Surge
