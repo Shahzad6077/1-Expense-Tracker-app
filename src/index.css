@@ -1,4 +1,4 @@
-@import "./Assets/mediaquries.scss";
+/* @import "./Assets/mediaquries.scss"; */
 :root {
   --grey: #fcf5ff;
   --yellow: #fff7d0;
@@ -44,12 +44,12 @@ code {
   max-width: 1080px;
   margin: auto;
 
-  @include media("<desktop") {
+  /* @include media("<desktop") {
     padding: 0px 2rem;
   }
   @include media("<tablet") {
     padding: 0px 1rem;
-  }
+  } */
 }
 
 .logo-font {
