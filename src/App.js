@@ -1,9 +1,23 @@
+// const { default: Header } = require("./Components/Header");
+import { useEffect, useState } from "react";
+import Header from "./Components/Header";
+import History from "./Components/History/History";
+import TopBar from "./Components/TopBar";
+
 function App() {
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    const getName = window.prompt("Please Enter your name", "");
+    setUsername(getName);
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Expense Tracker App Project 2</h1>
-      </header>
+      <Header />
+      <div className="container">
+        <TopBar username={username} />
+        <History />
+      </div>
     </div>
   );
 }
