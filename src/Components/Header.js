@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./components.module.scss";
 
-const Header = ({}) => {
+const Header = () => {
   return (
     <header className={"container " + classes.header}>
       <h1 className="logo-font">Expense Tracker</h1>
