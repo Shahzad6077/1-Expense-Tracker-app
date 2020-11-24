@@ -1,4 +1,4 @@
-/* @import "./Assets/mediaquries.scss"; */
+@import "./Assets/mediaquries.scss";
 :root {
   --grey: #fcf5ff;
   --yellow: #fff7d0;
@@ -8,15 +8,14 @@
   --blue-light2-bg: #edf5f7;
   --blue-light3-bg: #e4edef;
 
-  --primary-font: "Ubuntu", "Source Sans Pro", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  --primary-font: "Ubuntu", "Source Sans Pro", sans-serif;
   --secondary-font: "Source Sans Pro", sans-serif;
   --mb-font: "MBPictureHouseTwoW01-Bold";
 
   --primary-clr: #3c495e;
   --secondary-clr: #6f8ba5;
 
-  --header-font: clamp(1.8rem, -0.875rem + 8.333vw, 2.5rem);
+  --header-font: min(max(1.8rem, calc(-0.875rem + 8.333vw)), 2.5rem);
 }
 
 body {
@@ -44,12 +43,12 @@ code {
   max-width: 1080px;
   margin: auto;
 
-  /* @include media("<desktop") {
+  @include media("<desktop") {
     padding: 0px 2rem;
   }
   @include media("<tablet") {
     padding: 0px 1rem;
-  } */
+  }
 }
 
 .logo-font {
