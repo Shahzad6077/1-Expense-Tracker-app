@@ -9,8 +9,8 @@ function App() {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    const getName = window.prompt("Please Enter your name", "");
-    setUsername(getName);
+//     const getName = window.prompt("Please Enter your name", "");
+//     setUsername(getName);
   }, []);
   return (
     <div className="App">
