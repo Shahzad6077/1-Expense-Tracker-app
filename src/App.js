@@ -6,7 +6,7 @@ import InsertExpense from "./Components/InsertExpense";
 import TopBar from "./Components/TopBar";
 
 function App() {
-  const [username, setUsername] = useState("");
+  const [username] = useState("");
 
   useEffect(() => {
 //     const getName = window.prompt("Please Enter your name", "");
