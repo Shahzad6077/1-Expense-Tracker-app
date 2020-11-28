@@ -47,7 +47,7 @@
   overflow: hidden;
   border: 1px solid var(--blue-light3-bg);
   border-radius: 22px;
-  margin-bottom: 1.5rem;
+  // margin-bottom: 1rem;
   ul {
     list-style: none;
     display: grid;
@@ -84,7 +84,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 0.5rem;
     padding-right: 14px;
   }
   .item {
@@ -100,7 +100,8 @@
     &__type {
       grid-column: 1;
       grid-row: 1 / 3;
-
+      height: 47px;
+      width: 47px;
       border: 1px solid transparent;
       border-radius: 16px;
       padding: 0.6rem;
@@ -157,22 +158,77 @@
       }
     }
   }
+
+  .simpleItem {
+    max-width: 410px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    column-gap: 12px;
+    margin: auto;
+    position: relative;
+    &:hover {
+      .simpleItem__delBtn {
+        opacity: 1 !important;
+      }
+    }
+
+    &__delBtn {
+      grid-column: 1;
+      grid-row: 1;
+      height: 40px;
+      width: 40px;
+      border: 1px solid transparent;
+      border-radius: 16px;
+      padding: 0.6rem;
+      justify-content: center;
+      align-items: center;
+      transition: all 100ms ease-in;
+      display: flex;
+      opacity: 0;
+      background-color: var(--red);
+      cursor: pointer;
+      svg {
+        fill: #fff;
+      }
+      // &:hover {
+      // }
+    }
+
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 1.5rem;
+      border-radius: 16px;
+
+      &[data-type="EXPENSE"] {
+        background-color: var(--grey);
+      }
+      &[data-type="INCOME"] {
+        // background-color: #daf6eb;
+        background-color: var(--yellow);
+      }
+    }
+  }
 }
 
 .insertExpense {
   display: flex;
   justify-content: center;
-  // border: 1px solid;
   margin: 1rem 0px 2rem;
   &__addBtn {
     width: 45px;
     height: 45px;
-    border-radius: 12px;
+    border-radius: 50%;
     border: 1px solid transparent;
     background-color: var(--primary-clr);
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     svg {
       fill: #fff;
       transition: all 200ms ease-out;
@@ -200,7 +256,7 @@
     grid-template-columns: repeat(2, auto);
     grid-template-rows: auto auto;
     text-align: center;
-    gap: 1.2rem 3rem;
+    gap: 1rem 3rem;
     @include media("<tablet") {
       gap: 1rem 1.5rem;
       // padding: 0.8rem;
@@ -224,6 +280,55 @@
       &:nth-child(4) {
         font-size: var(--boxincome-font);
       }
+    }
+  }
+}
+
+.insertionForm {
+  width: 80%;
+  margin: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: var(--tw-shadow);
+  position: relative;
+  padding-bottom: 90px;
+  h4 {
+    text-align: center;
+    margin: 16px 0px;
+  }
+  input,
+  select {
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 0px;
+
+    &:focus {
+      outline: none;
+      border: none;
+      border-bottom: 2px solid;
+    }
+  }
+
+  .addbtn {
+    padding: 12px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    outline: none;
+    border: none;
+    background-color: var(--red);
+    border-top-left-radius: 36px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      width: 26px;
+      height: 26px;
+      fill: #fff;
     }
   }
 }
