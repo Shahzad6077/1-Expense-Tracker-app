@@ -13,6 +13,8 @@ const TrackerDataGen = () => {
   const [history, setHistory] = useState([...ARR]);
   const [filter, setFilter] = useState("ALL");
   const [currentBalance, setCurrentBalance] = useState(0);
+  const [incomeTotal, setIncomeTotal] = useState(0);
+  const [expenseTotal, setExpenseTotal] = useState(0);
 
   useEffect(() => {
     let incomeTotal = 0;
@@ -28,6 +30,8 @@ const TrackerDataGen = () => {
 
     const remainingBalance = incomeTotal - expenseTotal;
     setCurrentBalance(remainingBalance);
+    setIncomeTotal(incomeTotal);
+    setExpenseTotal(expenseTotal);
   }, [history]);
 
   const insertTackerHistory = ({ title, type, amount }) => {
@@ -61,7 +65,15 @@ const TrackerDataGen = () => {
     ]);
     return checker;
   };
-  return { history, insertTackerHistory, currentBalance, filter, setFilter };
+  return {
+    history,
+    insertTackerHistory,
+    currentBalance,
+    filter,
+    setFilter,
+    incomeTotal,
+    expenseTotal,
+  };
 };
 
 export const TrackerProvider = ({ children }) => {

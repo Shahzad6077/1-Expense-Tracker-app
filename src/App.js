@@ -1,24 +1,28 @@
 // const { default: Header } = require("./Components/Header");
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import BalanceWrapper from "./Components/BalanceWrapper";
 import Header from "./Components/Header";
 import History from "./Components/History/History";
-import InsertExpense from "./Components/InsertExpense";
-import TopBar from "./Components/TopBar";
+import { Layout } from "./Utils";
 
 function App() {
-  const [username] = useState("");
+  // const [username] = useState("");
 
   useEffect(() => {
-//     const getName = window.prompt("Please Enter your name", "");
-//     setUsername(getName);
+    //     const getName = window.prompt("Please Enter your name", "");
+    //     setUsername(getName);
   }, []);
   return (
     <div className="App">
       <Header />
       <div className="container">
-        <TopBar username={username} />
+        {/* <TopBar username={username} />
         <InsertExpense />
-        <History />
+        */}
+        <Layout>
+          <BalanceWrapper />
+          <History />
+        </Layout>
       </div>
     </div>
   );
