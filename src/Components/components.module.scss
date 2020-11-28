@@ -111,14 +111,15 @@
       &[data-type="EXPENSE"] {
         background-color: #f6dcda;
         svg {
-          fill: #fd5e53;
+          fill: var(--red);
         }
       }
       &[data-type="INCOME"] {
-        background-color: #daf6eb;
+        // background-color: #daf6eb;
+        background-color: var(--yellow);
 
         svg {
-          fill: #76b99e;
+          fill: #ecce34;
         }
       }
     }
