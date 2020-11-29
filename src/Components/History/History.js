@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import classes from "./../components.module.scss";
-import Filter from "./Filter";
+// import Filter from "./Filter";
 import List from "./List";
 
 const History = () => {
@@ -13,7 +13,8 @@ const History = () => {
           margin: "2rem 0px 1rem 0px",
         }}
       >
-        <Filter />
+        {/* <Filter /> */}
+        <h3>History</h3>
       </div>
       <div className={"styleScroll " + classes.history}>
         <List />

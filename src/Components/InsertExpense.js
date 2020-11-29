@@ -29,6 +29,7 @@ const InsertModal = ({ modalHandler }) => {
     amount: "",
   });
 
+  const [msg, setMsg] = useState(null);
   const onChangeInput = (e) => {
     e.stopPropagation();
     const {
@@ -40,8 +41,11 @@ const InsertModal = ({ modalHandler }) => {
 
   const onAddData = () => {
     const res = insertTackerHistory(inputObj);
-    if (res) {
+    console.log(res);
+    if (res.isValid) {
       modalHandler();
+    } else {
+      setMsg(res.msg);
     }
   };
   return (
@@ -78,6 +82,24 @@ const InsertModal = ({ modalHandler }) => {
           placeholder="Amount"
           containerStyle={{ marginTop: "1rem" }}
         />
+        {msg && (
+          <h4 style={{ color: "DarkRed" }}>
+            Invalid:{" "}
+            {msg.split("-").map((str) => (
+              <Fragment>
+                <span>{str}</span>
+                <br></br>
+              </Fragment>
+            ))}
+          </h4>
+        )}
+        <button
+          className={classes.cancelbtn}
+          type="button"
+          onClick={modalHandler}
+        >
+          <PlusIcon />
+        </button>
         <button className={classes.addbtn} type="button" onClick={onAddData}>
           <PlusIcon />
         </button>

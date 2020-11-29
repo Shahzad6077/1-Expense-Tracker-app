@@ -3,15 +3,15 @@ import React, { useContext, createContext, useState, useEffect } from "react";
 const trackerContext = createContext();
 const { Provider } = trackerContext;
 
-// const ARR = [
-//   { id: 12, title: "Purchase Shoes", type: "EXPENSE", amount: 30 },
-//   { id: 13, title: "PP Project", type: "INCOME", amount: 2200 },
-//   { id: 14, title: "Affiliate Sales", type: "INCOME", amount: 340 },
-//   { id: 15, title: "Domain & Hosting", type: "EXPENSE", amount: 74 },
-//   { id: 16, title: "Shared Hosting", type: "EXPENSE", amount: 74 },
-// ];
+const ARR = [
+  { id: 12, title: "Purchase Shoes", type: "EXPENSE", amount: 30 },
+  { id: 13, title: "PP Project", type: "INCOME", amount: 2200 },
+  { id: 14, title: "Affiliate Sales", type: "INCOME", amount: 340 },
+  { id: 15, title: "Domain & Hosting", type: "EXPENSE", amount: 74 },
+  { id: 16, title: "Shared Hosting", type: "EXPENSE", amount: 74 },
+];
 const TrackerDataGen = () => {
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState([...ARR]);
   const [filter, setFilter] = useState("ALL");
   const [currentBalance, setCurrentBalance] = useState(0);
   const [incomeTotal, setIncomeTotal] = useState(0);
@@ -46,24 +46,24 @@ const TrackerDataGen = () => {
     }
     if (type !== "INCOME" && type !== "EXPENSE") {
       checker.isValid = false;
-      checker.msg += "Type shoulde be INCOME or EXPENSE.";
+      checker.msg += "-Type shoulde be INCOME or EXPENSE.";
     }
     if (amount < 1) {
       checker.isValid = false;
-      checker.msg += "Amount must not be empty.";
+      checker.msg += "-Amount must not be empty.";
     }
 
     if (!checker.isValid) {
       return checker;
     }
     setHistory((p) => [
-      ...p,
       {
         id: new Date().getTime(),
         title,
         type,
         amount,
       },
+      ...p,
     ]);
     return checker;
   };

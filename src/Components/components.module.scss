@@ -47,7 +47,7 @@
   overflow: hidden;
   border: 1px solid var(--blue-light3-bg);
   border-radius: 22px;
-  // margin-bottom: 1rem;
+  overflow-x: auto;
   ul {
     list-style: none;
     display: grid;
@@ -86,6 +86,10 @@
     grid-template-columns: 1fr;
     gap: 0.5rem;
     padding-right: 14px;
+
+    @include media("<tablet") {
+      padding-right: 4px;
+    }
   }
   .item {
     max-width: 410px;
@@ -188,13 +192,12 @@
       transition: all 100ms ease-in;
       display: flex;
       opacity: 0;
-      background-color: var(--red);
+      // background-color: var(--red);
       cursor: pointer;
       svg {
-        fill: #fff;
+        // fill: #fff;
+        fill: var(--red);
       }
-      // &:hover {
-      // }
     }
 
     &__box {
@@ -203,13 +206,26 @@
       align-items: center;
       padding: 0px 1.5rem;
       border-radius: 16px;
-
+      text-align: center;
       &[data-type="EXPENSE"] {
         background-color: var(--grey);
       }
       &[data-type="INCOME"] {
         // background-color: #daf6eb;
         background-color: var(--yellow);
+      }
+      p {
+        max-width: 70%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    @include media("<tablet") {
+      column-gap: 8px;
+      &__box {
+        padding: 0px 0.8rem;
       }
     }
   }
@@ -218,10 +234,10 @@
 .insertExpense {
   display: flex;
   justify-content: center;
-  margin: 1rem 0px 2rem;
+  margin-top: 2rem;
   &__addBtn {
-    width: 45px;
-    height: 45px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     border: 1px solid transparent;
     background-color: var(--primary-clr);
@@ -293,7 +309,8 @@
   padding: 2rem;
   box-shadow: var(--tw-shadow);
   position: relative;
-  padding-bottom: 90px;
+  padding-bottom: 70px;
+
   h4 {
     text-align: center;
     margin: 16px 0px;
@@ -320,7 +337,7 @@
     border: none;
     background-color: var(--red);
     border-top-left-radius: 36px;
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,5 +347,30 @@
       height: 26px;
       fill: #fff;
     }
+  }
+  .cancelbtn {
+    padding: 12px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    outline: none;
+    border: none;
+    background-color: var(--yellow);
+    border-top-right-radius: 36px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      width: 26px;
+      height: 26px;
+      fill: var(--red);
+      transform: rotate(45deg);
+    }
+  }
+
+  @include media("<tablet") {
+    width: 100%;
   }
 }

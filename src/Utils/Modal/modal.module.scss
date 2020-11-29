@@ -10,4 +10,8 @@
   border-radius: 36px;
   padding: 2rem;
   display: flex;
+
+  @media (max-width: 420px) {
+    padding: 2rem 0.8rem;
+  }
 }

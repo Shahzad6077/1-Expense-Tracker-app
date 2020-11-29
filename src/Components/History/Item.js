@@ -47,9 +47,7 @@ export const SimpleItem = ({
       </div>
       <div className={classes.simpleItem__box} data-type={type}>
         <p>{title}</p>
-        <h3>
-          {type === "INCOME" ? "+" : "-"} ${amount}
-        </h3>
+        <h3>${amount}</h3>
       </div>
     </div>
   );

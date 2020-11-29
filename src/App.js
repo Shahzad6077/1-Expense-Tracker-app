@@ -11,8 +11,8 @@ function App() {
       <div className="container">
         <Layout>
           <BalanceWrapper />
-          <InsertExpense />
           <History />
+          <InsertExpense />
         </Layout>
       </div>
     </div>
