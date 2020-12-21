@@ -1,9 +1,5 @@
-# 1-Expense-Tracker-app
+# Expense Tracker app ( 1 )
 
-## Available Scripts
+## `Check the below link to visit the app`
 
-In the project directory, you can run:
-
-### `yarn add`
-
-### `yarn start`
+Open [expensetracker-shahzad.surge.sh](http://expensetracker-shahzad.surge.sh/) to view it in the browser.

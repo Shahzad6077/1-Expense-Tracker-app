@@ -85,8 +85,8 @@ const InsertModal = ({ modalHandler }) => {
         {msg && (
           <h4 style={{ color: "DarkRed" }}>
             Invalid:{" "}
-            {msg.split("-").map((str) => (
-              <Fragment>
+            {msg.split("-").map((str, i) => (
+              <Fragment key={i}>
                 <span>{str}</span>
                 <br></br>
               </Fragment>

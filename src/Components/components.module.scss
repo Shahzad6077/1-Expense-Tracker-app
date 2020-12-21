@@ -70,7 +70,21 @@
     }
   }
 }
-
+.historyWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 322px;
+  .historyBtn {
+    background-color: var(--salmon);
+    padding: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0px auto;
+    cursor: pointer;
+  }
+}
 .history {
   display: flex;
   align-items: center;
@@ -85,10 +99,10 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    padding-right: 14px;
+    padding-right: 28px;
 
     @include media("<tablet") {
-      padding-right: 4px;
+      padding-right: 6px;
     }
   }
   .item {
@@ -325,6 +339,7 @@
       outline: none;
       border: none;
       border-bottom: 2px solid;
+      color: var(--salmon);
     }
   }
 
